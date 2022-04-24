@@ -51,7 +51,11 @@ namespace SK.FlankingBonus
         /// </summary>
         public static void HitReportForPostfixPatch(Thing caster, LocalTargetInfo target)
         {
-            if (!target.HasThing || !(target.Thing is Pawn pawnTarget) || !(caster is Pawn casterPawn)) return;
+            if (!target.HasThing || !(target.Thing is Pawn pawnTarget) || !(caster is Pawn casterPawn))
+            {
+                Utils.LastShotReportDirectionCalculation = Utils.Direction.None;
+                return;
+            }
             Utils.LastShotReportDirectionCalculation = Utils.DetermineDirectionInRelationTo(casterPawn, pawnTarget);
         }
 

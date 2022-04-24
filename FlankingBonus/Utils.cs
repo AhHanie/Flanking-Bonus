@@ -10,10 +10,11 @@ namespace SK.FlankingBonus
         {
             Side,
             Back,
-            Front
+            Front,
+            None
         }
 
-        public static Direction LastShotReportDirectionCalculation = Direction.Front;
+        public static Direction LastShotReportDirectionCalculation = Direction.None;
 
         /// <summary>
         /// Determine the direction of the shooter pawn in relation to the target pawn

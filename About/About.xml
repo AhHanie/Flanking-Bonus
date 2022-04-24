@@ -9,5 +9,5 @@
   <loadAfter>
     <li>brrainz.harmony</li>
   </loadAfter>
-  <description>Deal bonus damage when attacking enemies from the side or the back</description>
+  <description>Deal bonus damage when attacking enemies from the side or back</description>
 </ModMetaData>
