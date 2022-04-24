@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+    <SK_FlankingBonus_SettingsListItemName>Flanking Bonus</SK_FlankingBonus_SettingsListItemName>
+    <SK_FlankingBonus_ModSettingsAllowSideFlanking>Side Flanking</SK_FlankingBonus_ModSettingsAllowSideFlanking>
+    <SK_FlankingBonus_ModSettingsSideFlankingBonus>Side Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingBonus>
+    <SK_FlankingBonus_ModSettingsAllowBackFlanking>Back Flanking</SK_FlankingBonus_ModSettingsAllowBackFlanking>
+    <SK_FlankingBonus_ModSettingsBackFlankingBonus>Back Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingBonus>
+    <SK_FlankingBonus_TooltipFlankingSideBonusText>Flanking Bonus Damage: {0} (Side)</SK_FlankingBonus_TooltipFlankingSideBonusText>
+    <SK_FlankingBonus_TooltipFlankingBackBonusText>Flanking Bonus Damage: {0} (Back)</SK_FlankingBonus_TooltipFlankingBackBonusText>
+</LanguageData>

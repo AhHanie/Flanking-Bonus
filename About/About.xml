@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Flanking Bonus</name> <!-- The name of your mod in the mod list -->
+  <author>Sk</author>
+  <packageId>Sk.FlankingBonus</packageId> <!-- a unique identifier for your mod. Must contain only a-z and periods, no spaces. -->
+  <supportedVersions> <!-- the version(s) your mod supports -->
+    <li>1.3</li>
+  </supportedVersions>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <description>Deal bonus damage when attacking enemies from the side or the back</description>
+</ModMetaData>
