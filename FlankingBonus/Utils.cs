@@ -37,9 +37,27 @@ namespace SK.FlankingBonus
         public static void AppendFlankDamage(StringBuilder builder)
         {
             if (LastShotReportDirectionCalculation == Direction.Side)
-                builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingSideBonusText".Translate(ModSettings.sideFlankingDamageBonus.ToStringPercent()));
+            {
+                builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingBonusSideTitle".Translate());
+                if (ModSettings.IsDamageBonusEnabled)
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusDamageText".Translate(ModSettings.sideFlankingDamageBonus.ToStringPercent()));
+                if (ModSettings.IsAimingBonusEnabled)
+                {
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.sideFlankingAimChanceBonus.ToStringPercent()));
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.sideFlankingPassCoverChanceBonus.ToStringPercent()));
+                }
+            }
             else if (LastShotReportDirectionCalculation == Direction.Back)
-                builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingBackBonusText".Translate(ModSettings.backFlankingDamageBonus.ToStringPercent()));
+            {
+                builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingBonusBackTitle".Translate());
+                if (ModSettings.IsDamageBonusEnabled)
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusDamageText".Translate(ModSettings.backFlankingDamageBonus.ToStringPercent()));
+                if (ModSettings.IsAimingBonusEnabled)
+                {
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.backFlankingAimChanceBonus.ToStringPercent()));
+                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.backFlankingPassCoverChanceBonus.ToStringPercent()));
+                }
+            }
         }
 
         public static void Init()

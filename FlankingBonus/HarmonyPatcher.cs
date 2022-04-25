@@ -30,11 +30,6 @@ namespace SK.FlankingBonus
                 MethodInfo applyToPawnMethod = AccessTools.Method(typeof(DamageWorker_AddInjury), "ApplyToPawn");
                 HarmonyMethod applyToPawnPrefixPatch = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("ApplyToPawnPrefixPatch"));
                 instance.Patch(applyToPawnMethod, applyToPawnPrefixPatch);
-
-                // Patch ShotReport GetTextReadout
-                MethodInfo getTextReadoutMethod = AccessTools.Method(typeof(ShotReport), "GetTextReadout");
-                HarmonyMethod getTextReadoutTranspiler = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("GetTextReadoutTranspiler"));
-                instance.Patch(getTextReadoutMethod, null, null, getTextReadoutTranspiler);
             }
 
             if (ModSettings.IsAimingBonusEnabled)
@@ -56,6 +51,14 @@ namespace SK.FlankingBonus
                 MethodInfo getNonMissChanceMethod = AccessTools.Method(typeof(Verb_MeleeAttack), "GetNonMissChance");
                 HarmonyMethod getNonMissChancePostfixPatch = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("GetNonMissChancePostfixPatch"));
                 instance.Patch(getNonMissChanceMethod, null, getNonMissChancePostfixPatch);
+            }
+
+            if (ModSettings.IsAimingBonusEnabled || ModSettings.IsDamageBonusEnabled)
+            {
+                // Patch ShotReport GetTextReadout
+                MethodInfo getTextReadoutMethod = AccessTools.Method(typeof(ShotReport), "GetTextReadout");
+                HarmonyMethod getTextReadoutTranspiler = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("GetTextReadoutTranspiler"));
+                instance.Patch(getTextReadoutMethod, null, null, getTextReadoutTranspiler);
             }
         }
 

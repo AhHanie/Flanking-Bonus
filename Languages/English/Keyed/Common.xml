@@ -12,8 +12,11 @@
     <SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>Back Flanking Aim Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>
     <SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>Back Flanking Pass Cover Bonus:</SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>
     <SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>Back Flanking Melee Hit Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>
-    <SK_FlankingBonus_TooltipFlankingSideBonusText>Flanking Bonus Damage: {0} (Side)</SK_FlankingBonus_TooltipFlankingSideBonusText>
-    <SK_FlankingBonus_TooltipFlankingBackBonusText>Flanking Bonus Damage: {0} (Back)</SK_FlankingBonus_TooltipFlankingBackBonusText>
+    <SK_FlankingBonus_TooltipFlankingBonusSideTitle>Flanking Bonus (Side):</SK_FlankingBonus_TooltipFlankingBonusSideTitle>
+    <SK_FlankingBonus_TooltipFlankingBonusBackTitle>Flanking Bonus (Back):</SK_FlankingBonus_TooltipFlankingBonusBackTitle>
+    <SK_FlankingBonus_TooltipFlankingBonusDamageText>Bonus Damage: {0}</SK_FlankingBonus_TooltipFlankingBonusDamageText>
+    <SK_FlankingBonus_TooltipFlankingBonusAimChanceText>Bonus Aim Chance: {0}</SK_FlankingBonus_TooltipFlankingBonusAimChanceText>
+    <SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText>Bonus Pass Cover Chance: {0}</SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText>
     <SK_FlankingBonus_ModSettingsNotesSectionTitle>Notes:</SK_FlankingBonus_ModSettingsNotesSectionTitle>
     <SK_FlankingBonus_ModSettingsRestartWarningLabel>- Make sure to restart your game after changing any settings</SK_FlankingBonus_ModSettingsRestartWarningLabel>
     <SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>- Setting damage to 0 for both types will completely disable this calculation</SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>
