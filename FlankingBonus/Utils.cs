@@ -1,5 +1,7 @@
 ﻿using System.Text;
+using System.Collections.Generic;
 using Verse;
+using RimWorld;
 using UnityEngine;
 
 namespace SK.FlankingBonus
@@ -15,6 +17,7 @@ namespace SK.FlankingBonus
         }
 
         public static Direction LastShotReportDirectionCalculation = Direction.None;
+        public static List<DamageDef> blacklistedDamageTypes = new List<DamageDef>();
 
         /// <summary>
         /// Determine the direction of the shooter pawn in relation to the target pawn
@@ -33,10 +36,16 @@ namespace SK.FlankingBonus
         // Called by transpiler
         public static void AppendFlankDamage(StringBuilder builder)
         {
-            if (ModSettings.allowSideFlankingDamage && LastShotReportDirectionCalculation == Direction.Side)
+            if (LastShotReportDirectionCalculation == Direction.Side)
                 builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingSideBonusText".Translate(ModSettings.sideFlankingDamageBonus.ToStringPercent()));
-            else if (ModSettings.allowBackFlankingDamage && LastShotReportDirectionCalculation == Direction.Back)
+            else if (LastShotReportDirectionCalculation == Direction.Back)
                 builder.AppendLine("   " + "SK_FlankingBonus_TooltipFlankingBackBonusText".Translate(ModSettings.backFlankingDamageBonus.ToStringPercent()));
+        }
+
+        public static void Init()
+        {
+            blacklistedDamageTypes.Add(DamageDefOf.Flame);
+            blacklistedDamageTypes.Add(DamageDefOf.Bomb);
         }
     }
 }

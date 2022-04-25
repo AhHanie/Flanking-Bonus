@@ -2,10 +2,22 @@
 
 <LanguageData>
     <SK_FlankingBonus_SettingsListItemName>Flanking Bonus</SK_FlankingBonus_SettingsListItemName>
-    <SK_FlankingBonus_ModSettingsAllowSideFlanking>Side Flanking</SK_FlankingBonus_ModSettingsAllowSideFlanking>
-    <SK_FlankingBonus_ModSettingsSideFlankingBonus>Side Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingBonus>
-    <SK_FlankingBonus_ModSettingsAllowBackFlanking>Back Flanking</SK_FlankingBonus_ModSettingsAllowBackFlanking>
-    <SK_FlankingBonus_ModSettingsBackFlankingBonus>Back Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingBonus>
+    <SK_FlankingBonus_ModSettingsAllowSideFlanking>Side Flanking:</SK_FlankingBonus_ModSettingsAllowSideFlanking>
+    <SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>Side Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>
+    <SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>Side Flanking Aim Chance Bonus:</SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>
+    <SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>Side Flanking Pass Cover Bonus:</SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>
+    <SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>Side Flanking Melee Hit Chance Bonus:</SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>
+    <SK_FlankingBonus_ModSettingsAllowBackFlanking>Back Flanking:</SK_FlankingBonus_ModSettingsAllowBackFlanking>
+    <SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>Back Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>
+    <SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>Back Flanking Aim Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>
+    <SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>Back Flanking Pass Cover Bonus:</SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>
+    <SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>Back Flanking Melee Hit Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>
     <SK_FlankingBonus_TooltipFlankingSideBonusText>Flanking Bonus Damage: {0} (Side)</SK_FlankingBonus_TooltipFlankingSideBonusText>
     <SK_FlankingBonus_TooltipFlankingBackBonusText>Flanking Bonus Damage: {0} (Back)</SK_FlankingBonus_TooltipFlankingBackBonusText>
+    <SK_FlankingBonus_ModSettingsNotesSectionTitle>Notes:</SK_FlankingBonus_ModSettingsNotesSectionTitle>
+    <SK_FlankingBonus_ModSettingsRestartWarningLabel>- Make sure to restart your game after changing any settings</SK_FlankingBonus_ModSettingsRestartWarningLabel>
+    <SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>- Setting damage to 0 for both types will completely disable this calculation</SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>
+    <SK_FlankingBonus_ModSettingsAimChanceDisableInfoLabel>- Setting aim / pass cover chance to 0 for both types will completely disable this calculation</SK_FlankingBonus_ModSettingsAimChanceDisableInfoLabel>
+    <SK_FlankingBonus_ModSettingsMeleeHitChanceDisableInfoLabel>- Setting melee hit chance to 0 for both types will completely disable this calculation</SK_FlankingBonus_ModSettingsMeleeHitChanceDisableInfoLabel>
+    <SK_FlankingBonus_ModSettingsResetDefaultsButton>Reset Settings</SK_FlankingBonus_ModSettingsResetDefaultsButton>
 </LanguageData>
