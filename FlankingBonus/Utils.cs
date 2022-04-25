@@ -43,8 +43,10 @@ namespace SK.FlankingBonus
                     builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusDamageText".Translate(ModSettings.sideFlankingDamageBonus.ToStringPercent()));
                 if (ModSettings.IsAimingBonusEnabled)
                 {
-                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.sideFlankingAimChanceBonus.ToStringPercent()));
-                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.sideFlankingPassCoverChanceBonus.ToStringPercent()));
+                    if (ModSettings.sideFlankingAimChanceBonus > 0)
+                        builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.sideFlankingAimChanceBonus.ToStringPercent()));
+                    if (ModSettings.sideFlankingPassCoverChanceBonus > 0)
+                        builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.sideFlankingPassCoverChanceBonus.ToStringPercent()));
                 }
             }
             else if (LastShotReportDirectionCalculation == Direction.Back)
@@ -54,8 +56,10 @@ namespace SK.FlankingBonus
                     builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusDamageText".Translate(ModSettings.backFlankingDamageBonus.ToStringPercent()));
                 if (ModSettings.IsAimingBonusEnabled)
                 {
-                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.backFlankingAimChanceBonus.ToStringPercent()));
-                    builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.backFlankingPassCoverChanceBonus.ToStringPercent()));
+                    if (ModSettings.backFlankingAimChanceBonus > 0)
+                        builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusAimChanceText".Translate(ModSettings.backFlankingAimChanceBonus.ToStringPercent()));
+                    if (ModSettings.backFlankingPassCoverChanceBonus > 0)
+                        builder.AppendLine("      " + "SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText".Translate(ModSettings.backFlankingPassCoverChanceBonus.ToStringPercent()));
                 }
             }
         }
