@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SK_FlankingBonus_SettingsListItemName>包抄增益</SK_FlankingBonus_SettingsListItemName>
+  <SK_FlankingBonus_ModSettingsAllowSideFlanking>侧翼包抄：</SK_FlankingBonus_ModSettingsAllowSideFlanking>
+  <SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>侧翼包抄伤害增益:</SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>
+  <SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>侧翼包抄瞄准增益:</SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>
+  <SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>侧翼包抄忽略掩体增益:</SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>
+  <SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>侧翼包抄近战命中率增益:</SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>
+  <SK_FlankingBonus_ModSettingsAllowBackFlanking>后方包抄:</SK_FlankingBonus_ModSettingsAllowBackFlanking>
+  <SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>后方包抄伤害增益:</SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>
+  <SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>后方包抄瞄准增益:</SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>
+  <SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>后方包抄忽略掩体增益:</SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>
+  <SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>后方包抄近战命中率增益:</SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>
+  <SK_FlankingBonus_TooltipFlankingBonusSideTitle>包抄(侧翼):</SK_FlankingBonus_TooltipFlankingBonusSideTitle>
+  <SK_FlankingBonus_TooltipFlankingBonusBackTitle>包抄(后方):</SK_FlankingBonus_TooltipFlankingBonusBackTitle>
+  <SK_FlankingBonus_TooltipFlankingBonusDamageText>伤害增益: {0}</SK_FlankingBonus_TooltipFlankingBonusDamageText>
+  <SK_FlankingBonus_TooltipFlankingBonusAimChanceText>瞄准增益: {0}</SK_FlankingBonus_TooltipFlankingBonusAimChanceText>
+  <SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText>忽略掩体增益: {0}</SK_FlankingBonus_TooltipFlankingBonusPassCoverChanceText>
+  <SK_FlankingBonus_ModSettingsNotesSectionTitle>注意：</SK_FlankingBonus_ModSettingsNotesSectionTitle>
+  <SK_FlankingBonus_ModSettingsRestartWarningLabel>- 确保更改任何设置后重新启动游戏</SK_FlankingBonus_ModSettingsRestartWarningLabel>
+  <SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>- 将两种类型的伤害设置为 0 将完全禁用此计算</SK_FlankingBonus_ModSettingsDamageDisableInfoLabel>
+  <SK_FlankingBonus_ModSettingsAimChanceDisableInfoLabel>- 将两种类型的瞄准/通过掩护机会设置为 0 将完全禁用此计算</SK_FlankingBonus_ModSettingsAimChanceDisableInfoLabel>
+  <SK_FlankingBonus_ModSettingsMeleeHitChanceDisableInfoLabel>- 将两种类型的近战命中率设置为 0 将完全禁用此计算</SK_FlankingBonus_ModSettingsMeleeHitChanceDisableInfoLabel>
+  <SK_FlankingBonus_ModSettingsResetDefaultsButton>重置设定</SK_FlankingBonus_ModSettingsResetDefaultsButton>
+</LanguageData>
