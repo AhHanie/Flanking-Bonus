@@ -4,8 +4,10 @@ namespace SK.FlankingBonus
 {
     public class ModSettings : Verse.ModSettings
     {
-        public static float sideFlankingDamageBonus = 0.1f;
-        public static float backFlankingDamageBonus = 0.25f;
+        public static float sideFlankingDamageRangedBonus = 0.1f;
+        public static float backFlankingDamageRangedBonus = 0.25f;
+        public static float sideFlankingDamageMeleeBonus = 0.1f;
+        public static float backFlankingDamageMeleeBonus = 0.25f;
         public static float sideFlankingAimChanceBonus = 0.02f;
         public static float sideFlankingPassCoverChanceBonus = 0.01f;
         public static float sideFlankingMeleeHitChanceBonus = 0.01f;
@@ -16,8 +18,10 @@ namespace SK.FlankingBonus
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref sideFlankingDamageBonus, "sideFlankingDamageBonus", 0.1f);
-            Scribe_Values.Look(ref backFlankingDamageBonus, "backFlankingDamageBonus", 0.25f);
+            Scribe_Values.Look(ref sideFlankingDamageRangedBonus, "sideFlankingDamageRangedBonus", 0.1f);
+            Scribe_Values.Look(ref backFlankingDamageRangedBonus, "backFlankingDamageRangedBonus", 0.25f);
+            Scribe_Values.Look(ref sideFlankingDamageMeleeBonus, "sideFlankingDamageMeleeBonus", 0.1f);
+            Scribe_Values.Look(ref backFlankingDamageMeleeBonus, "backFlankingDamageMeleeBonus", 0.25f);
             Scribe_Values.Look(ref sideFlankingAimChanceBonus, "sideFlankingAimChanceBonus", 0.02f);
             Scribe_Values.Look(ref sideFlankingPassCoverChanceBonus, "sideFlankingPassCoverChanceBonus", 0.01f);
             Scribe_Values.Look(ref sideFlankingMeleeHitChanceBonus, "sideFlankingMeleeHitChanceBonus", 0.01f);
@@ -34,15 +38,23 @@ namespace SK.FlankingBonus
             }
         }
 
-        public static bool IsDamageBonusEnabled
+        public static bool IsRangedDamageBonusEnabled
         {
             get
             {
-                return sideFlankingDamageBonus > 0 || backFlankingDamageBonus > 0;
+                return sideFlankingDamageRangedBonus > 0 || backFlankingDamageRangedBonus > 0;
             }
         }
 
-        public static bool IsMeleeBonusEnabled
+        public static bool IsMeleeDamageBonusEnabled
+        {
+            get
+            {
+                return sideFlankingDamageMeleeBonus > 0 || backFlankingDamageMeleeBonus > 0;
+            }
+        }
+
+        public static bool IsMeleeHitChanceBonusEnabled
         {
             get
             {
@@ -52,8 +64,10 @@ namespace SK.FlankingBonus
 
         public static void ResetToDefaults()
         {
-            sideFlankingDamageBonus = 0.1f;
-            backFlankingDamageBonus = 0.25f;
+            sideFlankingDamageRangedBonus = 0.1f;
+            backFlankingDamageRangedBonus = 0.25f;
+            sideFlankingDamageMeleeBonus = 0.1f;
+            backFlankingDamageMeleeBonus = 0.25f;
             sideFlankingAimChanceBonus = 0.02f;
             sideFlankingPassCoverChanceBonus = 0.01f;
             sideFlankingMeleeHitChanceBonus = 0.01f;

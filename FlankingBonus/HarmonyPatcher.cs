@@ -24,7 +24,7 @@ namespace SK.FlankingBonus
             HarmonyMethod hitReportForPrefixPatch = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("HitReportForPrefixPatch"));
             instance.Patch(hitReportForMethod, hitReportForPrefixPatch);
 
-            if (ModSettings.IsDamageBonusEnabled)
+            if (ModSettings.IsMeleeDamageBonusEnabled || ModSettings.IsRangedDamageBonusEnabled)
             {
                 // Patch DamageWorker_AddInjury ApplyToPawn
                 MethodInfo applyToPawnMethod = AccessTools.Method(typeof(DamageWorker_AddInjury), "ApplyToPawn");
@@ -45,7 +45,7 @@ namespace SK.FlankingBonus
                 instance.Patch(get_PassCoverChanceMethod, null, get_PassCoverChanceMethodPostfixPatch);
             }
 
-            if (ModSettings.IsMeleeBonusEnabled)
+            if (ModSettings.IsMeleeHitChanceBonusEnabled)
             {
                 // Patch Verb_MeleeAttack GetNonMissChance
                 MethodInfo getNonMissChanceMethod = AccessTools.Method(typeof(Verb_MeleeAttack), "GetNonMissChance");
@@ -53,26 +53,38 @@ namespace SK.FlankingBonus
                 instance.Patch(getNonMissChanceMethod, null, getNonMissChancePostfixPatch);
             }
 
-            if (ModSettings.IsAimingBonusEnabled || ModSettings.IsDamageBonusEnabled)
+            if (ModSettings.IsAimingBonusEnabled || ModSettings.IsRangedDamageBonusEnabled)
             {
                 // Patch ShotReport GetTextReadout
                 MethodInfo getTextReadoutMethod = AccessTools.Method(typeof(ShotReport), "GetTextReadout");
-                HarmonyMethod getTextReadoutTranspiler = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("GetTextReadoutTranspiler"));
-                instance.Patch(getTextReadoutMethod, null, null, getTextReadoutTranspiler);
+                HarmonyMethod getTextReadoutPostfixPatch = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("GetTextReadoutPostfixPatch"));
+                instance.Patch(getTextReadoutMethod, null, getTextReadoutPostfixPatch);
             }
         }
 
         // Before applying damage to a pawn
         public static bool ApplyToPawnPrefixPatch(DamageInfo dinfo, Pawn pawn)
         {
-            // Do not apply bonus damage by Fire and Bomb damage types
-            // caused by pawns
-            if (!(dinfo.Instigator is Pawn instigator) || Utils.blacklistedDamageTypes.Contains(dinfo.Def)) return true;
+            
+            if (!(dinfo.Instigator is Pawn instigator) || !Utils.whitelistedDamageTypes.Contains(dinfo.Def)) return true;
+            bool isRangedWeapon = false;
+            if (dinfo.Weapon != null) {
+                isRangedWeapon = dinfo.Weapon.IsRangedWeapon;
+            }
+            else
+            {
+                return true;
+            }
+
             Utils.Direction dir = Utils.DetermineDirectionInRelationTo(instigator, pawn);
             if (dir == Utils.Direction.Side)
-                dinfo.SetAmount(dinfo.Amount + dinfo.Amount * ModSettings.sideFlankingDamageBonus);
+            {
+                dinfo.SetAmount(dinfo.Amount + dinfo.Amount * (isRangedWeapon ? ModSettings.sideFlankingDamageRangedBonus : ModSettings.sideFlankingDamageMeleeBonus));
+            }
             else if (dir == Utils.Direction.Back)
-                dinfo.SetAmount(dinfo.Amount + dinfo.Amount * ModSettings.backFlankingDamageBonus);
+            {
+                dinfo.SetAmount(dinfo.Amount + dinfo.Amount * (isRangedWeapon ? ModSettings.backFlankingDamageRangedBonus : ModSettings.backFlankingDamageMeleeBonus));
+            }
             return true;
         }
 
@@ -88,37 +100,6 @@ namespace SK.FlankingBonus
             }
             Utils.LastShotReportDirectionCalculation = Utils.DetermineDirectionInRelationTo(casterPawn, pawnTarget);
             return true;
-        }
-
-        /// <summary>
-        /// Add Utils.AppendFlankDamage call at the following line in ShotReport.GetTextReadout:
-        /// 
-        /// stringBuilder.AppendLine(" " + TotalEstimatedHitChance.ToStringPercent());
-        /// stringBuilder.AppendLine("   " + "ShootReportShooterAbility".Translate() + "  " + factorFromShooterAndDist.ToStringPercent());
-        /// stringBuilder.AppendLine("   " + "ShootReportWeapon".Translate() + "        " + factorFromEquipment.ToStringPercent());
-        ///                                                      <---- ADDED HERE
-        /// if (target.HasThing && factorFromTargetSize != 1f)
-        /// 
-        /// Displays flank damage text in tooltip
-        /// 
-        /// </summary>
-        public static IEnumerable<CodeInstruction> GetTextReadoutTranspiler(IEnumerable<CodeInstruction> instructions)
-        {
-            int index = 0;
-            foreach (CodeInstruction instruction in instructions)
-            {
-                // Bad ... check for a unique signature instead so code could
-                // survive Rimworld updates. I am too dumb for that though *sighs*
-                // For such a simple transpiler, I am not going to bother
-                if (index == 75)
-                {
-                    yield return new CodeInstruction(OpCodes.Ldloc_0); // stringBuilder
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Utils), "AppendFlankDamage"));
-                }
-
-                yield return instruction;
-                index++;
-            }
         }
 
         /// <summary>
@@ -158,6 +139,11 @@ namespace SK.FlankingBonus
                 __result = Mathf.Min(__result + ModSettings.sideFlankingMeleeHitChanceBonus, 1f);
             else if (dir == Utils.Direction.Back)
                 __result = Mathf.Min(__result + ModSettings.backFlankingMeleeHitChanceBonus, 1f);
+        }
+
+        public static void GetTextReadoutPostfixPatch(ref string __result)
+        {
+            __result = Utils.AppendFlankDamage(__result);
         }
     }
 }

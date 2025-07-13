@@ -3,12 +3,14 @@
 <LanguageData>
     <SK_FlankingBonus_SettingsListItemName>Flanking Bonus</SK_FlankingBonus_SettingsListItemName>
     <SK_FlankingBonus_ModSettingsAllowSideFlanking>Side Flanking:</SK_FlankingBonus_ModSettingsAllowSideFlanking>
-    <SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>Side Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingDamageBonus>
+    <SK_FlankingBonus_ModSettingsSideFlankingRangedDamageBonus>Side Flanking Ranged Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingRangedDamageBonus>
+    <SK_FlankingBonus_ModSettingsSideFlankingMeleeDamageBonus>Side Flanking Melee Damage Bonus:</SK_FlankingBonus_ModSettingsSideFlankingMeleeDamageBonus>
     <SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>Side Flanking Aim Chance Bonus:</SK_FlankingBonus_ModSettingsSideFlankingAimChanceBonus>
     <SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>Side Flanking Pass Cover Bonus:</SK_FlankingBonus_ModSettingsSideFlankingPassCoverChanceBonus>
     <SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>Side Flanking Melee Hit Chance Bonus:</SK_FlankingBonus_ModSettingsSideFlankingMeleeHitChanceBonus>
     <SK_FlankingBonus_ModSettingsAllowBackFlanking>Back Flanking:</SK_FlankingBonus_ModSettingsAllowBackFlanking>
-    <SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>Back Flanking Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingDamageBonus>
+    <SK_FlankingBonus_ModSettingsBackFlankingRangedDamageBonus>Back Flanking Ranged Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingRangedDamageBonus>
+    <SK_FlankingBonus_ModSettingsBackFlankingMeleeDamageBonus>Back Flanking Melee Damage Bonus:</SK_FlankingBonus_ModSettingsBackFlankingMeleeDamageBonus>
     <SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>Back Flanking Aim Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingAimChanceBonus>
     <SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>Back Flanking Pass Cover Bonus:</SK_FlankingBonus_ModSettingsBackFlankingPassCoverChanceBonus>
     <SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>Back Flanking Melee Hit Chance Bonus:</SK_FlankingBonus_ModSettingsBackFlankingMeleeHitChanceBonus>
