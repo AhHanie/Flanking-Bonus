@@ -13,12 +13,6 @@ namespace SK.FlankingBonus
         public static Harmony instance;
         public static void PatchVanillaMethods()
         {
-            if (instance == null)
-            {
-                Logger.WriteToHarmonyFile("Missing harmony instance");
-                return;
-            }
-
             // Patch ShotReport HitReportFor
             MethodInfo hitReportForMethod = AccessTools.Method(typeof(ShotReport), "HitReportFor");
             HarmonyMethod hitReportForPrefixPatch = new HarmonyMethod(typeof(HarmonyPatcher).GetMethod("HitReportForPrefixPatch"));

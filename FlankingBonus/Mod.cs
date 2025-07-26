@@ -12,13 +12,12 @@ namespace SK.FlankingBonus
 {
     public class Mod : Verse.Mod
     {
-        public static bool SHOULD_PRINT_LOG = false;
         public Mod(ModContentPack content) : base(content)
         {
             Harmony instance = new Harmony("rimworld.sk.flankingbonus");
             HarmonyPatcher.instance = instance;
 
-            LongEventHandler.ExecuteWhenFinished(Init);
+            LongEventHandler.QueueLongEvent(Init, "SK.FlankingBonus.Init", true, null);
         }
 
         public override string SettingsCategory()
